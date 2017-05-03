@@ -14,7 +14,7 @@ public class KataFizzBuzz {
   }
 
   public String run(int n) {
-    if (isFizz((n)) && isBuzz(n)) {
+    if (isFizz(n) && isBuzz(n)) {
       return "FizzBuzz";
     } else if (isFizz(n)) {
       return "Fizz";
