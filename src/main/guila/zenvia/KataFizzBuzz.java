@@ -1,27 +1,51 @@
 package main.guila.zenvia;
 
 /**
- * Created by guila on 03/05/17.
+ * This class implements the FizzBuzz game.
  */
 public class KataFizzBuzz {
 
-  private boolean isFizz(int n) {
+  private final String labelDiv3;
+  private final String labelDiv5;
+
+  public KataFizzBuzz(String labelDiv3, String labelDiv5) {
+    this.labelDiv3 = labelDiv3;
+    this.labelDiv5 = labelDiv5;
+  }
+
+  public KataFizzBuzz() {
+    this("Fizz", "Buzz");
+  }
+
+  private boolean isDivisibleBy3(int n) {
     return n % 3 == 0;
   }
 
-  private boolean isBuzz(int n) {
+  private boolean isDivisibleBy5(int n) {
     return n % 5 == 0;
   }
 
-  public String run(int n) {
-    if (isFizz(n) && isBuzz(n)) {
-      return "FizzBuzz";
-    } else if (isFizz(n)) {
-      return "Fizz";
-    } else if (isBuzz(n)) {
-      return "Buzz";
+  /**
+   * Evaluate a number as follows:
+   * - for multiples of three print "Fizz"
+   * - for multiples of five print "Buzz"
+   * - for numbers which are multiples of both three and five print "FizzBuzz"
+   * - otherwise, print the number
+   * @param number
+   * @return String
+   */
+  public String evaluate(int number) {
+    if (isDivisibleBy3(number) && isDivisibleBy5(number)) {
+      return labelDiv3 + labelDiv5;
+    } else if (isDivisibleBy3(number)) {
+      return labelDiv3;
+    } else if (isDivisibleBy5(number)) {
+      return labelDiv5;
     } else {
-      return String.valueOf(n);
+      return String.valueOf(number);
     }
   }
 }
+
+
+
