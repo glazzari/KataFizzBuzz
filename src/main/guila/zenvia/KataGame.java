@@ -1,4 +1,4 @@
-package main.guila.zenvia.advanced;
+package main.guila.zenvia;
 
 import java.util.ArrayList;
 import java.util.List;
